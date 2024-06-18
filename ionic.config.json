@@ -1,0 +1,7 @@
+{
+  "name": "rentparkApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

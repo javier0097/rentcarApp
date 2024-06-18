@@ -1,0 +1,22 @@
+.steps-container {
+  margin: 20px 0;
+  display: flex;
+}
+
+.step {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle-step {
+  /*background-color: #0054e9;*/
+  background-color: #6290e3;
+  color: white;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  align-content: center;
+}
