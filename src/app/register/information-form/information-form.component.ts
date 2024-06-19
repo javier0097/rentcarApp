@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationFormComponent  implements OnInit {
 
-  constructor() { }
+  public date: Date | null;
+  constructor() {
+    this.date = null;
+  }
 
   ngOnInit() {}
 

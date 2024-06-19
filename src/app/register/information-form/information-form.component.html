@@ -1,3 +1,37 @@
-<p>
-  information-form works!
-</p>
+<div class="form-container">
+  <h1>Personal Information</h1>
+  <div class="form-description">Please enter your personal information</div>
+  <div class="input-container">
+    <ion-item>
+      <ion-input label="Name" label-placement="stacked" placeholder="Enter your first name on ID"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Last Name" label-placement="stacked" placeholder="Enter your last name on ID"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Birth date</ion-label>
+      <ion-input
+        value="{{ date | date: 'dd.MM.yyyy' }}"
+        id="date"
+        class="ion-text-end"
+      ></ion-input>
+      <ion-popover trigger="date">
+        <ng-template>
+          <ion-datetime
+            presentation="date"
+            [(ngModel)]="date"
+          ></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Email" label-placement="stacked" placeholder="Enter your email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Password" label-placement="stacked" placeholder="Enter your new password"></ion-input>
+    </ion-item>
+    <div class="button-container">
+      <ion-button>Next</ion-button>
+    </div>
+  </div>
+</div>
