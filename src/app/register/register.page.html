@@ -12,23 +12,43 @@
   </ion-header>
   <div class="steps-container">
     <div class="step">
-      <div class="circle-step">
+      <div class="circle-step" [ngClass]="{'current-circle-step': step === 1}">
         1
       </div>
       <p>information</p>
     </div>
     <div class="step">
-      <div class="circle-step">
+      <div class="circle-step" [ngClass]="{'current-circle-step': step === 2}">
         2
       </div>
       <p>Document</p>
     </div>
     <div class="step">
-      <div class="circle-step">
+      <div class="circle-step" [ngClass]="{'current-circle-step': step === 3}">
         3
       </div>
       <p>selfie</p>
     </div>
   </div>
-  <app-information-form></app-information-form>
+  <app-information-form
+    *ngIf="step === 1"
+    (nextClicked)="changeNextView()"
+  ></app-information-form>
+  <app-photo-uploader
+    *ngIf="step === 2"
+    [title]=documentTitle
+    [description]=documentDescription
+    [subtitle]="documentSubtitle"
+    [nextButtonTag]="'Next'"
+    (nextClicked)="changeNextView()"
+    (previousClicked)="changePreviousView()"
+  ></app-photo-uploader>
+  <app-photo-uploader
+    *ngIf="step === 3"
+    [title]=selfieTitle
+    [description]=selfieDescription
+    [subtitle]="selfieSubtitle"
+    [nextButtonTag]="'Finish'"
+    (previousClicked)="changePreviousView()"
+  ></app-photo-uploader>
 </ion-content>

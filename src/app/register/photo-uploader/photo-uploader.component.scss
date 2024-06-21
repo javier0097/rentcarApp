@@ -1,0 +1,67 @@
+.form-container {
+  margin: 20px 40px;
+  padding: 0 15px 15px 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: #d1d1d1;
+}
+
+.form-description {
+  color: grey;
+}
+
+.input-container {
+  margin: 30px 0;
+}
+
+.camera-screen-container {
+  display: flex;
+  justify-content: center;
+}
+
+.camera-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  background-color: #dbdbdb;
+  aspect-ratio: 1 / 1;
+  color: #b3b1b1;
+}
+
+.icon-camera {
+  width: 100px;
+  height: 100px;
+}
+
+.custom-file-input {
+  display: none; /* Oculta el input original */
+}
+
+.custom-file-label {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-file-label::before {
+  content: "Elegir archivo";
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.custom-file-text {
+  flex-grow: 1;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}

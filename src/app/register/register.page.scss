@@ -11,12 +11,17 @@
 }
 
 .circle-step {
-  /*background-color: #0054e9;*/
-  background-color: #6290e3;
+  background-color: #859ac1;
   color: white;
   border-radius: 50%;
   height: 30px;
   width: 30px;
   text-align: center;
   align-content: center;
+}
+
+.current-circle-step {
+  background-color: #0054e9;
+  height: 45px;
+  width: 45px;
 }

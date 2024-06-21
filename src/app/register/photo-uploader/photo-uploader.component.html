@@ -1,3 +1,21 @@
-<p>
-  photo-uploader works!
-</p>
+<div class="form-container">
+  <h1>{{ title }}</h1>
+  <div class="form-description">{{ description }}</div>
+  <div class="input-container">
+    <div class="camera-screen-container">
+      <div class="camera-screen">
+        <ion-icon name="camera-outline" class="icon-camera"></ion-icon>
+        <label>inactive camera</label>
+      </div>
+    </div>
+    <h4>{{ subtitle }}</h4>
+    <input type="file" id="fileInput" class="custom-file-input" (change)="onFileSelected($event)">
+    <label for="fileInput" class="custom-file-label">
+      <span class="custom-file-text">{{ fileName }}</span>
+    </label>
+  </div>
+  <div class="button-container">
+    <ion-button fill="outline" (click)="onPreviousClicked()">Previous</ion-button>
+    <ion-button (click)="onNextClicked()">{{nextButtonTag}}</ion-button>
+  </div>
+</div>
