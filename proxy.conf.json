@@ -1,11 +1,10 @@
 {
   "/local": {
-    "target": "localhost:8081",
+    "target": "http://localhost:8081",
     "secure": false,
     "logLevel": "debug",
     "pathRewrite": {
       "^/local": ""
-    },
-    "changeOrigin": true
+    }
   }
 }

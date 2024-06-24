@@ -34,12 +34,10 @@ export class RegisterPage {
   }
 
   updateData(data: Account): void {
-    console.log(data);
     this.accountData = data;
   }
 
   saveData(): void {
-    console.log("entra", this.accountData)
     if (this.accountData){
       this.accountService.saveAccount(this.accountData).subscribe((accountResponse: AccountResponse) => {
         console.log("accountResponse", accountResponse);

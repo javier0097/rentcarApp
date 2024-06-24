@@ -14,7 +14,7 @@ export class AccountService {
     account: Account
   ): Observable<AccountResponse> {
     return this.http.post<AccountResponse>(
-      '/local/account',
+      '/local/accounts',
       {
         names: account.names,
         lastName: account.lastName,
