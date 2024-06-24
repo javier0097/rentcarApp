@@ -32,6 +32,7 @@
   </div>
   <app-information-form
     *ngIf="step === 1"
+    (data)="updateData($event)"
     (nextClicked)="changeNextView()"
   ></app-information-form>
   <app-photo-uploader
@@ -50,5 +51,6 @@
     [subtitle]="selfieSubtitle"
     [nextButtonTag]="'Finish'"
     (previousClicked)="changePreviousView()"
+    (nextClicked)="saveData()"
   ></app-photo-uploader>
 </ion-content>

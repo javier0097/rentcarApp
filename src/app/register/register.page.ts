@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Account, AccountResponse} from "../interface/account";
+import {AccountService} from "../service/account.service";
 
 @Component({
   selector: 'app-register',
@@ -13,10 +15,11 @@ export class RegisterPage {
   selfieDescription: string = 'Please take a selfie to complete your registration.';
   documentSubtitle: string = 'Upload Document';
   selfieSubtitle: string = 'Upload Selfie';
+  accountData?: Account;
 
   step: number = 1;
 
-  constructor() { }
+  constructor(private accountService: AccountService) {}
 
   changePreviousView(): void {
     if (this.step > 1) {
@@ -27,6 +30,20 @@ export class RegisterPage {
   changeNextView():void {
     if (this.step < 3) {
       this.step += 1;
+    }
+  }
+
+  updateData(data: Account): void {
+    console.log(data);
+    this.accountData = data;
+  }
+
+  saveData(): void {
+    console.log("entra", this.accountData)
+    if (this.accountData){
+      this.accountService.saveAccount(this.accountData).subscribe((accountResponse: AccountResponse) => {
+        console.log("accountResponse", accountResponse);
+      });
     }
   }
 }
