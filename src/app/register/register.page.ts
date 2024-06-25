@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Account, AccountResponse} from "../interface/account";
 import {AccountService} from "../service/account.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,7 @@ export class RegisterPage {
 
   step: number = 1;
 
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService, private router: Router) {}
 
   changePreviousView(): void {
     if (this.step > 1) {
@@ -41,6 +42,7 @@ export class RegisterPage {
     if (this.accountData){
       this.accountService.saveAccount(this.accountData).subscribe((accountResponse: AccountResponse) => {
         console.log("accountResponse", accountResponse);
+        this.router.navigate(['/account/'+accountResponse.id]);
       });
     }
   }

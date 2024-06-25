@@ -26,5 +26,9 @@ export class AccountService {
     );
   }
 
-
+  public getAccount (id: string): Observable<AccountResponse> {
+    return this.http.get<AccountResponse>(
+      '/local/accounts/'+id,
+    );
+  }
 }

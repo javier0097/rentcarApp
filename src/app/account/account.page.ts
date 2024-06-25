@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {AccountService} from "../service/account.service";
+import {AccountResponse} from "../interface/account";
 
 @Component({
   selector: 'app-account',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountPage implements OnInit {
 
-  constructor() { }
+  accountId: string | null;
+  name?: string;
+  lastName?: string;
+  phone?: string;
+  email?: string;
+
+  constructor(private accountService: AccountService, private route: ActivatedRoute) {
+    this.accountId = null;
+  }
 
   ngOnInit() {
+    this.accountId = this.route.snapshot.paramMap.get('id');
+    if (this.accountId){
+      this.accountService.getAccount(this.accountId).subscribe(
+        (accountResponse: AccountResponse) => {
+          this.name = accountResponse.names;
+          this.lastName = accountResponse.lastName;
+          this.phone = accountResponse.phone;
+          this.email = accountResponse.email;
+        }
+      );
+    }
   }
 
 }

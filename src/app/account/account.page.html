@@ -8,7 +8,7 @@
   <div class="main-info-container">
     <img alt="no-image" src="assets/OIP.jpeg" class="account-photo">
     <div class="name-container">
-      <h2>Javier Martinez</h2>
+      <h2>{{name}}</h2>
       <ion-icon name="checkmark-circle" class="info-icon verified-icon"></ion-icon>
 <!--      <ion-icon name="warning" class="info-icon warning-icon"></ion-icon>-->
     </div>
@@ -17,12 +17,12 @@
   </div>
   <div class="info-container">
     <label class="info-label">Full Name</label>
-    <p class="info-data">Javier Martinez</p>
+    <p class="info-data">{{name}} {{lastName}}</p>
 
     <label class="info-label">Phone Number</label>
-    <p class="info-data">+591 1234456</p>
+    <p class="info-data">{{phone}}</p>
 
     <label class="info-label">Email</label>
-    <p class="info-data">javier.com</p>
+    <p class="info-data">{{email}}</p>
   </div>
 </ion-content>
