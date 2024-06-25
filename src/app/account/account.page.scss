@@ -1,0 +1,53 @@
+.main-info-container {
+  background-color: #0054e9;
+  width: 100%;
+  height: 300px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.name-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.info-icon {
+  width: 28px;
+  height: 46px;
+  margin-left: 5px;
+}
+
+.verified-icon {
+  color: #22c55e;
+}
+
+.warning-icon {
+  color: #eab308;
+}
+
+.validation-text {
+  color: #a7a6a6;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 40px;
+}
+
+.info-label {
+  font-weight: bold;
+}
+
+.info-data {
+  color: #797979;
+}
